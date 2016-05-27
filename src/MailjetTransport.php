@@ -3,9 +3,9 @@
 namespace DraperStudio\Mailjet;
 
 use GuzzleHttp\ClientInterface;
+use Illuminate\Mail\Transport\Transport;
 use Swift_Encoding;
 use Swift_Mime_Message;
-use Illuminate\Mail\Transport\Transport;
 
 class MailjetTransport extends Transport
 {
