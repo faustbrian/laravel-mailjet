@@ -2,8 +2,8 @@
 
 namespace DraperStudio\Mailjet;
 
-use Illuminate\Support\Arr;
 use GuzzleHttp\Client as HttpClient;
+use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
