@@ -2,9 +2,9 @@
 
 namespace DraperStudio\Mailjet;
 
+use GuzzleHttp\ClientInterface;
 use Swift_Encoding;
 use Swift_Mime_Message;
-use GuzzleHttp\ClientInterface;
 
 class MailjetTransport extends Transport
 {
