@@ -15,7 +15,7 @@ use GuzzleHttp\Client as HttpClient;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+class MailjetServiceProvider extends BaseServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -37,6 +37,5 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        //
     }
 }
