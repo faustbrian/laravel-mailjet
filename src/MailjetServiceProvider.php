@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Mailjet;
 
 use GuzzleHttp\Client as HttpClient;
@@ -20,7 +22,7 @@ class MailjetServiceProvider extends BaseServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         app('swift.transport')->extend('mailjet', function () {
             $config = $this->app['config']->get('services.mailjet', []);
@@ -35,7 +37,7 @@ class MailjetServiceProvider extends BaseServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register(): void
     {
     }
 }
