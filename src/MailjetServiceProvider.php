@@ -24,9 +24,9 @@ namespace BrianFaust\Mailjet;
 
 use GuzzleHttp\Client as HttpClient;
 use Illuminate\Support\Arr;
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class MailjetServiceProvider extends BaseServiceProvider
+class MailjetServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

@@ -67,7 +67,7 @@ class MailjetTransport extends Transport
     /**
      * {@inheritdoc}
      */
-    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
+    public function send(Swift_Mime_Message $message, &$failedRecipients = null): bool
     {
         $this->beforeSendPerformed($message);
 
@@ -101,7 +101,7 @@ class MailjetTransport extends Transport
             }, $attachments);
         }
 
-        return $this->client->post('https://api.mailjet.com/v3/send', $options);
+        return (bool) $this->client->post('https://api.mailjet.com/v3/send', $options);
     }
 
     /**
@@ -111,7 +111,7 @@ class MailjetTransport extends Transport
      *
      * @return array
      */
-    protected function getRecipients(Swift_Mime_Message $message)
+    protected function getRecipients(Swift_Mime_Message $message): array
     {
         $to = [];
 
@@ -142,7 +142,7 @@ class MailjetTransport extends Transport
      *
      * @return array
      */
-    protected function getFrom(Swift_Mime_Message $message)
+    protected function getFrom(Swift_Mime_Message $message): array
     {
         return array_map(function ($email, $name) {
             return compact('name', 'email');
@@ -156,7 +156,7 @@ class MailjetTransport extends Transport
      *
      * @return string
      */
-    protected function getReplyTo(Swift_Mime_Message $message)
+    protected function getReplyTo(Swift_Mime_Message $message): ?string
     {
         if (is_array($message->getReplyTo())) {
             return current($message->getReplyTo()).' <'.key($message->getReplyTo()).'>';
@@ -168,7 +168,7 @@ class MailjetTransport extends Transport
      *
      * @return string
      */
-    public function getPublicKey()
+    public function getPublicKey(): string
     {
         return $this->publicKey;
     }
@@ -180,7 +180,7 @@ class MailjetTransport extends Transport
      *
      * @return string
      */
-    public function setPublicKey($publicKey)
+    public function setPublicKey($publicKey): bool
     {
         return $this->publicKey = $publicKey;
     }
@@ -190,7 +190,7 @@ class MailjetTransport extends Transport
      *
      * @return string
      */
-    public function getPrivateKey()
+    public function getPrivateKey(): string
     {
         return $this->privateKey;
     }
@@ -202,7 +202,7 @@ class MailjetTransport extends Transport
      *
      * @return string
      */
-    public function setPrivateKey($privateKey)
+    public function setPrivateKey($privateKey): bool
     {
         return $this->publicKey = $publicKey;
     }
