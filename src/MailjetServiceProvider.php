@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Mailjet.
  *
@@ -23,7 +20,7 @@ class MailjetServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot(): void
+    public function boot()
     {
         app('swift.transport')->extend('mailjet', function () {
             $config = $this->app['config']->get('services.mailjet', []);
@@ -33,12 +30,5 @@ class MailjetServiceProvider extends ServiceProvider
                 $config['public'], $config['private']
             );
         });
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register(): void
-    {
     }
 }
