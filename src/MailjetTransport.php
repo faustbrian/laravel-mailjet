@@ -66,16 +66,16 @@ class MailjetTransport extends Transport
         $message->setBcc([]);
 
         $options = [
-            'auth'    => [$this->publicKey, $this->privateKey],
+            'auth' => [$this->publicKey, $this->privateKey],
             'headers' => [
                 'Headers' => ['Reply-To' => $this->getReplyTo($message)],
             ],
             'json' => [
-                'FromEmail'  => $from['email'],
-                'FromName'   => $from['name'],
-                'Subject'    => $message->getSubject(),
-                'Text-part'  => $message->toString(),
-                'Html-part'  => $message->getBody(),
+                'FromEmail' => $from['email'],
+                'FromName' => $from['name'],
+                'Subject' => $message->getSubject(),
+                'Text-part' => $message->toString(),
+                'Html-part' => $message->getBody(),
                 'Recipients' => $recipients,
             ],
         ];
@@ -84,8 +84,8 @@ class MailjetTransport extends Transport
             $options['json']['Attachments'] = array_map(function ($attachment) {
                 return [
                     'Content-type' => $attachment->getContentType(),
-                    'Filename'     => $attachment->getFileName(),
-                    'content'      => Swift_Encoding::getBase64Encoding()->encodeString($attachment->getBody()),
+                    'Filename' => $attachment->getFileName(),
+                    'content' => Swift_Encoding::getBase64Encoding()->encodeString($attachment->getBody()),
                 ];
             }, $attachments);
         }
