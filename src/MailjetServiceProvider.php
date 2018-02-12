@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace BrianFaust\Mailjet;
 
-use Illuminate\Support\Arr;
 use GuzzleHttp\Client as HttpClient;
+use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 
 class MailjetServiceProvider extends ServiceProvider
