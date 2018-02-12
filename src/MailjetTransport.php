@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace BrianFaust\Mailjet;
 
-use Swift_Encoding;
-use Swift_Mime_Message;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Mail\Transport\Transport;
+use Swift_Encoding;
+use Swift_Mime_Message;
 
 class MailjetTransport extends Transport
 {
