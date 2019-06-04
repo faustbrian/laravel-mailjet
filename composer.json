@@ -1,12 +1,12 @@
 {
-    "name": "faustbrian/laravel-mailjet",
+    "name": "artisanry/mailjet",
     "description": ":package_description",
-    "keywords": ["laravel", "framework", "Laravel-mailjet", "Laravel Mailjet", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-mailjet", "Laravel Mailjet"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\Mailjet\\": "src"
+            "Artisanry\\Mailjet\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\Mailjet\\": "tests"
+            "Artisanry\\Tests\\Mailjet\\": "tests"
         }
     },
     "config": {
@@ -37,7 +37,7 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\Mailjet\\MailjetServiceProvider"
+                "Artisanry\\Mailjet\\MailjetServiceProvider"
             ]
         }
     },
